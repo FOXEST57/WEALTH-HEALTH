@@ -1,0 +1,36 @@
+.create-employee {
+    position: relative;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+    
+}
+
+.address {
+    margin-top: 10px;
+    
+}
+
+.submit{
+    margin: 1rem auto 0 5rem;
+    
+}
