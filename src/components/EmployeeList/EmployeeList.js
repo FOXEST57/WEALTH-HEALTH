@@ -9,7 +9,7 @@ const EmployeeList = () => {
     const employeeContext = useContext(EmployeeContext)
     const employees = employeeContext.employees
     const [filteredEmployees, setFilteredEmployees] = useState([])
-    const [perPage, setPerPage] = useState(10)
+    const [perPage, setPerPage] = useState(10) // permet de spécifier le nombre de ligne à afficher par page
     const [totalPageCount, setTotalPageCount] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
     const [startIndex, setStartIndex] = useState(1)
