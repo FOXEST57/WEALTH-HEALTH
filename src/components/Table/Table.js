@@ -5,7 +5,7 @@ import TableBody from '../TableBody/TableBody'
 import TableHead from '../TableHead/TableHead'
 
 const Table = ({employees}) => {
-
+    // initialisation du state pour trier le marcher      
     const [sortedEmployees, setSortedEmployees] = useState([...employees])
     const columns = [
         { label: 'First Name', accessor: 'firstname' },
@@ -22,7 +22,7 @@ const Table = ({employees}) => {
     useEffect(()=> {
         setSortedEmployees([...employees])
     },[employees])
-    
+    // fonction pour trié le tableau
     const handleSorting = (sortField, sortOrder) => {
         if (sortField) {
             const sorted = [...employees].sort((a, b) => {

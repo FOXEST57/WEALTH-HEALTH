@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Pagination.css' 
 
 const Pagination = (props) => {
-
+// state pour prev ou next de page
   const [prevLinkDisabled, setPrevLinkDisabled] = useState(false)
  const [nextLinkDisabled, setNextLinkDisabled] = useState(false)
 
@@ -10,6 +10,7 @@ const Pagination = (props) => {
   setPrevLinkDisabled(false)
     setNextLinkDisabled(false)
  },[props.totalPages])
+ // fonction pour aller a la page arriere
   const handlePrevPageClick = ()=>{
     
     if(props.currentPage > 1){
@@ -18,6 +19,7 @@ const Pagination = (props) => {
       setNextLinkDisabled(()=>props.currentPage <=  props.totalPages? false: true)
     } 
   }
+  // fonction pour aller a la page suivante
   const handleNextPageClick = ()=>{
     setPrevLinkDisabled(()=>props.currentPage + 1 === 1 ? true: false)
     setNextLinkDisabled(()=> props.currentPage + 1 <  props.totalPages? false: true)

@@ -6,6 +6,7 @@ import Table from '../Table/Table'
 import Pagination from '../Pagination/Pagination'
 
 const EmployeeList = () => {
+    // appel un context employee
     const employeeContext = useContext(EmployeeContext)
     const employees = employeeContext.employees
     const [filteredEmployees, setFilteredEmployees] = useState([])
@@ -21,11 +22,11 @@ const EmployeeList = () => {
         setPerPage(() => { return parseInt(e.target.value) })
         setCurrentPage(1)
     }
-
+    // utilisation dun useEffect pour initialise le filtre des employé
     useEffect(() => {
         setFilteredEmployees(employees)
     }, [employees])
-
+    // utilisation dun useEffect pour initialise la pagination
     useEffect(() => {
 
         setTotalPageCount(() => { return Math.ceil(filteredEmployees.length / perPage) })
@@ -35,7 +36,7 @@ const EmployeeList = () => {
             return filteredEmployees.slice(startIndex, endIndex)
         })
     }, [perPage, currentPage, startIndex, endIndex, filteredEmployees, totalPageCount])
-
+// fonction pour la recherche
     const handleSearchChange = e => {
         e.preventDefault()
         setCurrentPage(1)

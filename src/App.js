@@ -6,12 +6,14 @@ import { useContext, useEffect } from 'react';
 import { EmployeeContext } from './context/EmployeeContext';
 
 function App() {
+    // appel du context(useContext)
     const employeesContext = useContext(EmployeeContext)
-
+    //mise en place dun useEffect 
     useEffect(() => {
         employeesContext.getStoredEmployees()
     }, [])
 
+    // mise en place du router avec 2 routes
     return (
         <div className="App">
             <BrowserRouter>

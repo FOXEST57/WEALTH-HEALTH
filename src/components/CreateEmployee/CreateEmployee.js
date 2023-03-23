@@ -8,6 +8,7 @@ import { EmployeeContext } from '../../context/EmployeeContext';
 import DateInput from '../DateInput/DateInput';
 import SelectInput from '../SelectInput/SelectInput';
 const CreateEmployee = () => {
+    // initialisation des states du formulaire
     const initialState = {
         firstname: '',
         lastname: '',
@@ -19,7 +20,7 @@ const CreateEmployee = () => {
         zipCode: '',
         department: ''
     }
-
+ // initialisation du style du modal
     const myModalStyle = {
         background: "white",
         position: "relative",
@@ -32,7 +33,7 @@ const CreateEmployee = () => {
         borderRadius: "5px",
         padding: "10px"
     }
-
+// initialisation du style du bouton
     const myModalButtonStyle = {
         color: "white",
         background: 'black',
@@ -44,14 +45,15 @@ const CreateEmployee = () => {
         border: "2px solid black",
         cursor: "pointer"
     }
-
+// initialisation des states
     const [employee, setEmployee] = useState(initialState)
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const [modalContent, setModalContent] = useState()
+    // appel du context addEmploye (usecontext)
     const { addEmployee } = useContext(EmployeeContext)
 
 
-
+// function constante pour mettre a jour un employe
     const handleChange = e => {
         setEmployee(prevState => {
             return {
@@ -61,7 +63,7 @@ const CreateEmployee = () => {
         })
 
     }
-
+// function constante pour ajouter un employe, et ouvrir le modal
     const handleSubmit = e => {
         e.preventDefault()
         addEmployee(employee)
