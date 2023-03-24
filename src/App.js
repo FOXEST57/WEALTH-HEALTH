@@ -8,7 +8,7 @@ import { EmployeeContext } from './context/EmployeeContext';
 function App() {
     // appel du context(useContext)
     const employeesContext = useContext(EmployeeContext)
-    //mise en place dun useEffect 
+    //mise en place d un useEffect 
     useEffect(() => {
         employeesContext.getStoredEmployees()
     }, [])
