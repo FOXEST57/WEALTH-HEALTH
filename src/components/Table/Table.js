@@ -22,7 +22,7 @@ const Table = ({employees}) => {
     useEffect(()=> {
         setSortedEmployees([...employees])
     },[employees])
-    // fonction pour trié le tableau
+    // fonction pour trier le tableau
     const handleSorting = (sortField, sortOrder) => {
         if (sortField) {
             const sorted = [...employees].sort((a, b) => {

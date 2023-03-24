@@ -15,7 +15,7 @@ export const EmployeeContextProvider = props => {
         })
         storeEmployee(employee)
     }
-  // function constante pour enregistrer les employer dans le localstorage
+  // function constante pour enregistrer les employes dans le localstorage
     const storeEmployee = employee => {
         const employeesStored = localStorage.getItem('employees') !== null
             ? JSON.parse(localStorage.getItem('employees'))
